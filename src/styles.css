@@ -28,13 +28,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* "gold" tokens = TNU brand red (keeps existing class names in components) */
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-gold-soft: var(--gold-soft);
   --color-brand-red: var(--brand-red);
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-label: "Bebas Neue", Impact, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-label: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   @keyframes fade-in-up {
@@ -51,35 +52,33 @@
 
 :root {
   --radius: 0.25rem;
-  /* TNU brand: warm charcoal + gold accents (matches tnubarbersalon.com feel) */
-  --background: oklch(0.13 0.005 60);
-  --foreground: oklch(0.97 0.01 80);
-  --card: oklch(0.17 0.008 60);
-  --card-foreground: oklch(0.97 0.01 80);
-  --popover: oklch(0.17 0.008 60);
-  --popover-foreground: oklch(0.97 0.01 80);
-  --primary: oklch(0.78 0.14 80);
-  --primary-foreground: oklch(0.13 0.005 60);
-  --secondary: oklch(0.22 0.01 60);
-  --secondary-foreground: oklch(0.97 0.01 80);
-  --muted: oklch(0.2 0.008 60);
-  --muted-foreground: oklch(0.7 0.015 70);
-  --accent: oklch(0.78 0.14 80);
-  --accent-foreground: oklch(0.13 0.005 60);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.97 0.01 80);
-  --border: oklch(0.27 0.015 70);
-  --input: oklch(0.22 0.01 60);
-  --ring: oklch(0.78 0.14 80);
-  --gold: oklch(0.78 0.14 80);
-  --gold-foreground: oklch(0.13 0.005 60);
-  --gold-soft: oklch(0.65 0.12 75);
-  --brand-red: oklch(0.48 0.18 25);
-}
-
-.dark {
-  --background: oklch(0.13 0.005 60);
-  --foreground: oklch(0.97 0.01 80);
+  /*
+   * Pulled from tnubarbersalon.com Squarespace CSS (site.css):
+   * white backgrounds, #222 text, #f50509 brand red, #281a17 brown accents.
+   */
+  --background: #ffffff;
+  --foreground: #222222;
+  --card: #ffffff;
+  --card-foreground: #222222;
+  --popover: #ffffff;
+  --popover-foreground: #222222;
+  --primary: #f50509;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f6f6;
+  --secondary-foreground: #222222;
+  --muted: #f6f6f6;
+  --muted-foreground: rgba(34, 34, 34, 0.65);
+  --accent: #f50509;
+  --accent-foreground: #ffffff;
+  --destructive: #f50509;
+  --destructive-foreground: #ffffff;
+  --border: #dddddd;
+  --input: #f6f6f6;
+  --ring: #f50509;
+  --gold: #f50509;
+  --gold-foreground: #ffffff;
+  --gold-soft: #c90407;
+  --brand-red: #f50509;
 }
 
 @layer base {
@@ -87,7 +86,7 @@
     border-color: var(--color-border);
   }
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -110,11 +109,14 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
   .font-label {
     font-family: var(--font-label);
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   .fade-in-up {

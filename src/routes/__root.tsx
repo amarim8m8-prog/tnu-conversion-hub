@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Tight N Up Barber Salon — Bowie, Upper Marlboro & Crofton's multicultural barber shop. 20+ years of craftsmanship. Book online in 60 seconds.",
       },
       { name: "author", content: "Tight N Up Barber Salon" },
-      { name: "theme-color", content: "#1f1a14" },
+      { name: "theme-color", content: "#f50509" },
       { property: "og:site_name", content: "Tight N Up Barber Salon" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -96,10 +96,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap",
-      },
     ],
     scripts: [
       {

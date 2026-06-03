@@ -114,7 +114,7 @@ function HomePage() {
               className="h-full w-full object-cover opacity-60"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/75 to-background" />
         </div>
         <div className="mx-auto max-w-7xl px-4 pb-24 pt-20 sm:pt-28 lg:px-8 lg:pb-32 lg:pt-36">
           <p className="font-label text-sm tracking-[0.3em] text-gold">EST. 2001 · BOWIE, MD</p>
