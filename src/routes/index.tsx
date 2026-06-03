@@ -106,8 +106,8 @@ function HomePage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="h-full w-full bg-gradient-to-br from-card/50 to-background flex items-center justify-center">
-            <span className="text-muted-foreground/50 font-label tracking-widest text-sm">HERO IMAGE (PLACEHOLDER)</span>
+          <div className="h-full w-full bg-gradient-to-br from-card/50 to-background flex items-center justify-center relative">
+            <img src="/images/hero.png" alt="Tight N Up Barbershop Interior" className="object-cover w-full h-full opacity-60" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
         </div>
@@ -121,21 +121,21 @@ function HomePage() {
             20+ years of craftsmanship. Multicultural, award-winning, community-rooted.
             Fresh cuts for men, women, and kids from Bowie to Crofton.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 fade-in-up" style={{ animationDelay: '0.2s' }}>
             <button
               onClick={open}
-              className="inline-flex items-center gap-2 rounded-sm bg-gold px-7 py-4 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition hover:bg-gold-soft"
+              className="inline-flex items-center gap-2 rounded-sm bg-gold px-7 py-4 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition-all hover:scale-105 active:scale-95 hover:bg-gold-soft"
             >
               Book Your Cut <ArrowRight className="h-4 w-4" />
             </button>
             <Link
               to="/locations"
-              className="inline-flex items-center gap-2 rounded-sm border border-foreground/30 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-foreground transition hover:border-gold hover:text-gold"
+              className="inline-flex items-center gap-2 rounded-sm border border-foreground/30 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:scale-105 active:scale-95 hover:border-gold hover:text-gold"
             >
               See Locations
             </Link>
           </div>
-          <p className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground">
+          <p className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground fade-in-up" style={{ animationDelay: '0.4s' }}>
             <Award className="h-4 w-4 text-gold" />
             Small Business of the Year — Bowie Chamber of Commerce
           </p>
@@ -145,7 +145,7 @@ function HomePage() {
       <TrustBar />
 
       {/* LOCATIONS PREVIEW */}
-      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8 fade-in-up" style={{ animationDelay: '0.1s' }}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="font-label text-sm tracking-widest text-gold">FOUR SHOPS · ONE STANDARD</p>
@@ -193,7 +193,7 @@ function HomePage() {
       </section>
 
       {/* WHY TNU */}
-      <section className="border-y border-border bg-card/30">
+      <section className="border-y border-border bg-card/30 fade-in-up" style={{ animationDelay: '0.1s' }}>
         <div className="mx-auto max-w-7xl px-4 py-24 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -230,8 +230,8 @@ function HomePage() {
               </Link>
             </div>
             <div className="relative">
-              <div className="aspect-square w-full rounded border border-border bg-gradient-to-br from-card/50 to-background flex items-center justify-center">
-                <span className="text-muted-foreground/50 font-label tracking-widest text-sm">BARBER IMAGE (PLACEHOLDER)</span>
+              <div className="aspect-square w-full rounded border border-border bg-gradient-to-br from-card/50 to-background flex items-center justify-center relative overflow-hidden">
+                <img src="/images/barber.png" alt="Clinton Truesdale, Founder of TNU Barbershop" className="object-cover w-full h-full" />
               </div>
               <div className="absolute -bottom-4 -left-4 rounded border border-gold bg-background px-5 py-3 font-label text-xs tracking-widest text-gold">
                 EST. 2001 · CLINTON TRUESDALE
@@ -242,7 +242,7 @@ function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8 fade-in-up" style={{ animationDelay: '0.1s' }}>
         <p className="text-center font-label text-sm tracking-widest text-gold">REAL CLIENTS · REAL CUTS</p>
         <h2 className="mt-2 text-center font-display text-4xl text-foreground sm:text-5xl">
           What our family of clients say
@@ -261,7 +261,7 @@ function HomePage() {
       </section>
 
       {/* PRODUCTS TEASER */}
-      <section className="border-y border-border bg-card/30">
+      <section className="border-y border-border bg-card/30 fade-in-up" style={{ animationDelay: '0.2s' }}>
         <div className="mx-auto max-w-7xl px-4 py-24 lg:px-8">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>

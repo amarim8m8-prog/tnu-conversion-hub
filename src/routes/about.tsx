@@ -89,7 +89,7 @@ function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="border-y border-border bg-card/30">
+      <section className="border-y border-border bg-card/30 fade-in-up" style={{ animationDelay: '0.2s' }}>
         <div className="mx-auto max-w-5xl px-4 py-20 lg:px-8">
           <p className="font-label text-sm tracking-widest text-gold">2001 — 2026</p>
           <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
@@ -109,7 +109,7 @@ function AboutPage() {
       </section>
 
       {/* Video */}
-      <section className="mx-auto max-w-5xl px-4 py-20 lg:px-8">
+      <section className="mx-auto max-w-5xl px-4 py-20 lg:px-8 fade-in-up" style={{ animationDelay: '0.3s' }}>
         <div className="aspect-video w-full overflow-hidden rounded border border-border">
           <iframe
             src="https://www.youtube.com/embed/_PTrWKFJZpM"
@@ -125,7 +125,7 @@ function AboutPage() {
 
       {/* Staff culture */}
       <section className="border-t border-border bg-card/30">
-        <div className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8 fade-in-up" style={{ animationDelay: '0.4s' }}>
           <p className="font-label text-sm tracking-widest text-gold">THE TNU TEAM</p>
           <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
             Vetted. Skilled. Dedicated.

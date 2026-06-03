@@ -34,37 +34,51 @@
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-label: "Bebas Neue", Impact, sans-serif;
+  
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.12 0.005 60);
-  --foreground: oklch(0.97 0.01 80);
-  --card: oklch(0.15 0.005 60);
-  --card-foreground: oklch(0.97 0.01 80);
-  --popover: oklch(0.15 0.005 60);
-  --popover-foreground: oklch(0.97 0.01 80);
-  --primary: oklch(0.78 0.14 80);
-  --primary-foreground: oklch(0.12 0.005 60);
-  --secondary: oklch(0.20 0.005 60);
-  --secondary-foreground: oklch(0.97 0.01 80);
-  --muted: oklch(0.18 0.005 60);
-  --muted-foreground: oklch(0.7 0.01 70);
-  --accent: oklch(0.78 0.14 80);
-  --accent-foreground: oklch(0.12 0.005 60);
+  /* Premium Dark Theme */
+  --background: oklch(0.12 0.01 0); /* Very Dark Grey/Black */
+  --foreground: oklch(0.98 0 0); /* Off White */
+  --card: oklch(0.15 0.01 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0.01 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.55 0.25 25); /* Deep Barbershop Red */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.20 0.01 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.25 0.01 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.55 0.25 25);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.97 0.01 80);
-  --border: oklch(0.25 0.005 70);
-  --input: oklch(0.20 0.005 60);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.25 0.01 0);
+  --input: oklch(0.20 0.01 0);
   --ring: oklch(0.78 0.14 80);
-  --gold: oklch(0.78 0.14 80); /* Keeping the luxurious gold */
-  --gold-foreground: oklch(0.12 0.005 60);
+  --gold: oklch(0.78 0.14 80); /* Luxurious Gold */
+  --gold-foreground: oklch(0.12 0.01 0);
   --gold-soft: oklch(0.65 0.12 75);
 }
 
 .dark {
-  --background: oklch(0.12 0.005 60);
-  --foreground: oklch(0.97 0.01 80);
+  --background: oklch(0.12 0.01 0);
+  --foreground: oklch(0.98 0 0);
 }
 
 @layer base {
@@ -78,9 +92,9 @@
   body {
     background-color: var(--color-background);
     background-image: 
-      radial-gradient(circle at 50% 0%, oklch(0.2 0.05 60 / 0.5), transparent 70%),
-      linear-gradient(to right, oklch(0.2 0.01 60 / 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.2 0.01 60 / 0.1) 1px, transparent 1px);
+      radial-gradient(circle at 50% 0%, oklch(0.2 0.02 0 / 0.5), transparent 70%),
+      linear-gradient(to right, oklch(0.2 0.01 0 / 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.2 0.01 0 / 0.1) 1px, transparent 1px);
     background-size: 100% 100%, 40px 40px, 40px 40px;
     background-attachment: fixed;
     color: var(--color-foreground);
@@ -95,4 +109,11 @@
     font-family: var(--font-label);
     letter-spacing: 0.08em;
   }
+  
+  /* Micro animations */
+  .fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
 }
+
