@@ -2,30 +2,48 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useBooking } from "@/components/BookingDialog";
 import { CtaSection } from "@/components/CtaSection";
-import fade1 from "@/assets/gallery-fade-1.jpg";
-import fade2 from "@/assets/gallery-fade-2.jpg";
-import lineup1 from "@/assets/gallery-lineup-1.jpg";
-import locs1 from "@/assets/gallery-locs-1.jpg";
-import natural1 from "@/assets/gallery-natural-1.jpg";
-import kids1 from "@/assets/gallery-kids-1.jpg";
-import tools from "@/assets/gallery-tools.jpg";
-import shop from "@/assets/gallery-shop.jpg";
-import craft from "@/assets/barber-craft.jpg";
+import tnu3 from "@/assets/gallery-real/tnu3.jpg.asset.json";
+import tnu5 from "@/assets/gallery-real/tnu5.jpg.asset.json";
+import tnu14 from "@/assets/gallery-real/tnu14.jpg.asset.json";
+import tnu18 from "@/assets/gallery-real/tnu18.jpg.asset.json";
+import tnu19 from "@/assets/gallery-real/tnu19.jpg.asset.json";
+import fb1 from "@/assets/gallery-real/fb1.jpg.asset.json";
+import fb2 from "@/assets/gallery-real/fb2.jpg.asset.json";
+import fb3 from "@/assets/gallery-real/fb3.jpg.asset.json";
+import fb4 from "@/assets/gallery-real/fb4.jpg.asset.json";
+import fb5 from "@/assets/gallery-real/fb5.jpg.asset.json";
+import fb6 from "@/assets/gallery-real/fb6.jpg.asset.json";
+import fb7 from "@/assets/gallery-real/fb7.jpg.asset.json";
+import img8429 from "@/assets/gallery-real/img8429.jpg.asset.json";
+import img9814 from "@/assets/gallery-real/img9814.jpg.asset.json";
+import img9907 from "@/assets/gallery-real/img9907.jpg.asset.json";
+import img9961 from "@/assets/gallery-real/img9961.jpg.asset.json";
+import salonA4 from "@/assets/gallery-real/salon-a4.jpg.asset.json";
+import salonS2 from "@/assets/gallery-real/salon-s2.jpg.asset.json";
 
 type Item = { src: string; alt: string; cat: string };
 const ITEMS: Item[] = [
-  { src: fade1, alt: "High top fade haircut by TNU barber", cat: "Fades" },
-  { src: craft, alt: "Precision fade in progress at TNU Bowie", cat: "Fades" },
-  { src: lineup1, alt: "Sharp beard lineup and taper fade", cat: "Lineups" },
-  { src: fade2, alt: "Slicked back undercut by Tight N Up", cat: "Fades" },
-  { src: locs1, alt: "Maintained shoulder-length locs by TNU loc artist", cat: "Locs" },
-  { src: natural1, alt: "Natural curly hair shaped at TNU salon", cat: "Natural" },
-  { src: kids1, alt: "Smiling kid with fresh fade at Tight N Up", cat: "Kids" },
-  { src: shop, alt: "Interior of Tight N Up Barber Salon", cat: "Shop" },
-  { src: tools, alt: "TNU barber tools laid out on leather", cat: "Shop" },
+  { src: fb1.url, alt: "Full beard sculpt and clean fade by Tight N Up", cat: "Fades" },
+  { src: fb4.url, alt: "360 waves with sharp temple lineup at TNU", cat: "Lineups" },
+  { src: fb6.url, alt: "High top afro shaped with a clean fade", cat: "Natural" },
+  { src: tnu14.url, alt: "Precision clipper fade in progress", cat: "Fades" },
+  { src: tnu5.url, alt: "Tapered neckline with clipper work", cat: "Fades" },
+  { src: tnu18.url, alt: "Kid getting a fresh fade at Tight N Up", cat: "Kids" },
+  { src: tnu19.url, alt: "Mature gentleman with a polished side-part finish", cat: "Fades" },
+  { src: tnu3.url, alt: "Beard scissor work — precision lineup", cat: "Lineups" },
+  { src: fb2.url, alt: "Women's side-shave with sleek top by TNU stylist", cat: "Natural" },
+  { src: img8429.url, alt: "Salt-and-pepper beard shape-up with clippers", cat: "Lineups" },
+  { src: salonS2.url, alt: "Beard trim on a longtime customer at TNU", cat: "Lineups" },
+  { src: img9907.url, alt: "Macro close-up of a razor-sharp lineup", cat: "Fades" },
+  { src: img9961.url, alt: "TNU barber clippering a regular customer", cat: "Fades" },
+  { src: salonA4.url, alt: "Barber finishing detail work on a young client", cat: "Shop" },
+  { src: img9814.url, alt: "Smiling Tight N Up barber on the floor", cat: "Shop" },
+  { src: fb5.url, alt: "Full house — every chair filled at TNU Bowie", cat: "Shop" },
+  { src: fb3.url, alt: "TNU shears, clippers, and Antiseptic Skin & Scalp spray", cat: "Shop" },
+  { src: fb7.url, alt: "Walk-Ins Welcome sign outside Tight N Up", cat: "Shop" },
 ];
 
-const FILTERS = ["All", "Fades", "Lineups", "Locs", "Natural", "Kids", "Shop"];
+const FILTERS = ["All", "Fades", "Lineups", "Natural", "Kids", "Shop"];
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -34,7 +52,7 @@ export const Route = createFileRoute("/gallery")({
       {
         name: "description",
         content:
-          "See the cuts, fades, lineups, locs, and natural hair work from Tight N Up barbers across Bowie, Upper Marlboro & Crofton MD.",
+          "Real cuts, fades, lineups, beard work, and natural styles from Tight N Up barbers across Bowie, Upper Marlboro & Crofton MD.",
       },
       { property: "og:title", content: "TNU Gallery — Our Work Speaks for Itself" },
       {
@@ -42,8 +60,8 @@ export const Route = createFileRoute("/gallery")({
         content: "Real cuts from real chairs at Tight N Up Barber Salon.",
       },
       { property: "og:url", content: "/gallery" },
-      { property: "og:image", content: fade1 },
-      { name: "twitter:image", content: fade1 },
+      { property: "og:image", content: fb1.url },
+      { name: "twitter:image", content: fb1.url },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
   }),
@@ -67,7 +85,7 @@ function GalleryPage() {
             Our Work Speaks for Itself
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            A glimpse of the cuts, shapes, and styles coming out of TNU chairs every day.
+            Real cuts from real chairs across our Bowie, Upper Marlboro, and Crofton shops.
           </p>
         </div>
       </section>
