@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaSection } from "@/components/CtaSection";
 import { TrustBar } from "@/components/TrustBar";
-import craft from "@/assets/barber-craft.jpg";
+
 import { Award } from "lucide-react";
 
 const TIMELINE = [
@@ -29,8 +29,8 @@ export const Route = createFileRoute("/about")({
         content: "How Clinton Truesdale built Tight N Up into Maryland's most trusted barber salon.",
       },
       { property: "og:url", content: "/about" },
-      { property: "og:image", content: craft },
-      { name: "twitter:image", content: craft },
+      { property: "og:image", content: "" },
+      { name: "twitter:image", content: "" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),
@@ -81,14 +81,9 @@ function AboutPage() {
             </div>
           </div>
           <div>
-            <img
-              src={craft}
-              alt="Clinton Truesdale's TNU barbers giving a precision fade in Bowie, Maryland"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="w-full rounded border border-border"
-            />
+            <div className="aspect-square w-full rounded border border-border bg-gradient-to-br from-card/50 to-background flex items-center justify-center">
+              <span className="text-muted-foreground/50 font-label tracking-widest text-sm">BARBER IMAGE (PLACEHOLDER)</span>
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-shop.jpg";
-import craftImg from "@/assets/barber-craft.jpg";
+
 import { TrustBar } from "@/components/TrustBar";
 import { Testimonials } from "@/components/Testimonials";
 import { CtaSection } from "@/components/CtaSection";
@@ -56,8 +55,8 @@ export const Route = createFileRoute("/")({
         content: "Maryland's trusted multicultural barber salon. 4 locations. 20+ years of craftsmanship.",
       },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
+      { property: "og:image", content: "" },
+      { name: "twitter:image", content: "" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -67,7 +66,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Tight N Up Barber Salon",
-          image: heroImg,
+          image: "",
           telephone: "+1-301-430-5264",
           email: "cbtruesdale1@gmail.com",
           priceRange: "$$",
@@ -107,13 +106,9 @@ function HomePage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img
-            src={heroImg}
-            alt="Interior of Tight N Up Barber Salon — premium leather chairs and warm gold lighting"
-            className="h-full w-full object-cover"
-            width={1920}
-            height={1080}
-          />
+          <div className="h-full w-full bg-gradient-to-br from-card/50 to-background flex items-center justify-center">
+            <span className="text-muted-foreground/50 font-label tracking-widest text-sm">HERO IMAGE (PLACEHOLDER)</span>
+          </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
         </div>
         <div className="mx-auto max-w-7xl px-4 pb-24 pt-20 sm:pt-28 lg:px-8 lg:pb-32 lg:pt-36">
@@ -235,14 +230,9 @@ function HomePage() {
               </Link>
             </div>
             <div className="relative">
-              <img
-                src={craftImg}
-                alt="TNU barber giving a precision fade haircut to a Black client in Bowie, Maryland"
-                loading="lazy"
-                width={1024}
-                height={1024}
-                className="w-full rounded border border-border"
-              />
+              <div className="aspect-square w-full rounded border border-border bg-gradient-to-br from-card/50 to-background flex items-center justify-center">
+                <span className="text-muted-foreground/50 font-label tracking-widest text-sm">BARBER IMAGE (PLACEHOLDER)</span>
+              </div>
               <div className="absolute -bottom-4 -left-4 rounded border border-gold bg-background px-5 py-3 font-label text-xs tracking-widest text-gold">
                 EST. 2001 · CLINTON TRUESDALE
               </div>

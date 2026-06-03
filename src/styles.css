@@ -38,32 +38,32 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.13 0.005 60);
+  --background: oklch(0.12 0.005 60);
   --foreground: oklch(0.97 0.01 80);
-  --card: oklch(0.17 0.008 60);
+  --card: oklch(0.15 0.005 60);
   --card-foreground: oklch(0.97 0.01 80);
-  --popover: oklch(0.17 0.008 60);
+  --popover: oklch(0.15 0.005 60);
   --popover-foreground: oklch(0.97 0.01 80);
   --primary: oklch(0.78 0.14 80);
-  --primary-foreground: oklch(0.13 0.005 60);
-  --secondary: oklch(0.22 0.01 60);
+  --primary-foreground: oklch(0.12 0.005 60);
+  --secondary: oklch(0.20 0.005 60);
   --secondary-foreground: oklch(0.97 0.01 80);
-  --muted: oklch(0.2 0.008 60);
-  --muted-foreground: oklch(0.7 0.015 70);
+  --muted: oklch(0.18 0.005 60);
+  --muted-foreground: oklch(0.7 0.01 70);
   --accent: oklch(0.78 0.14 80);
-  --accent-foreground: oklch(0.13 0.005 60);
+  --accent-foreground: oklch(0.12 0.005 60);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.97 0.01 80);
-  --border: oklch(0.27 0.015 70);
-  --input: oklch(0.22 0.01 60);
+  --border: oklch(0.25 0.005 70);
+  --input: oklch(0.20 0.005 60);
   --ring: oklch(0.78 0.14 80);
-  --gold: oklch(0.78 0.14 80);
-  --gold-foreground: oklch(0.13 0.005 60);
+  --gold: oklch(0.78 0.14 80); /* Keeping the luxurious gold */
+  --gold-foreground: oklch(0.12 0.005 60);
   --gold-soft: oklch(0.65 0.12 75);
 }
 
 .dark {
-  --background: oklch(0.13 0.005 60);
+  --background: oklch(0.12 0.005 60);
   --foreground: oklch(0.97 0.01 80);
 }
 
@@ -73,9 +73,16 @@
   }
   html {
     color-scheme: dark;
+    scroll-behavior: smooth;
   }
   body {
     background-color: var(--color-background);
+    background-image: 
+      radial-gradient(circle at 50% 0%, oklch(0.2 0.05 60 / 0.5), transparent 70%),
+      linear-gradient(to right, oklch(0.2 0.01 60 / 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.2 0.01 60 / 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
