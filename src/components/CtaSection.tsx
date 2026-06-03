@@ -1,4 +1,4 @@
-import { useBooking } from "./BookingDialog";
+import { BookButton } from "./BookButton";
 import { PHONE, PHONE_TEL } from "@/lib/site-data";
 import { Phone } from "lucide-react";
 
@@ -13,7 +13,6 @@ export function CtaSection({
   subtitle?: string;
   ctaLabel?: string;
 }) {
-  const { open } = useBooking();
   return (
     <section className="border-y border-border bg-card/30">
       <div className="mx-auto max-w-5xl px-4 py-20 text-center lg:px-8">
@@ -21,12 +20,9 @@ export function CtaSection({
         <h2 className="mt-3 font-display text-4xl text-foreground sm:text-5xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">{subtitle}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <button
-            onClick={open}
-            className="rounded-sm bg-gold px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition hover:bg-gold-soft"
-          >
+          <BookButton className="rounded-sm bg-gold px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition hover:bg-gold-soft hover:scale-[1.02] active:scale-[0.98]">
             {ctaLabel}
-          </button>
+          </BookButton>
           <a
             href={`tel:${PHONE_TEL}`}
             className="inline-flex items-center gap-2 rounded-sm border border-border bg-transparent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground transition hover:border-gold hover:text-gold"

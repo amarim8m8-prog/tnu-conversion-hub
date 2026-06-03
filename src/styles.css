@@ -31,11 +31,11 @@
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-gold-soft: var(--gold-soft);
+  --color-brand-red: var(--brand-red);
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-label: "Bebas Neue", Impact, sans-serif;
-  
-  /* Animations */
+
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   @keyframes fade-in-up {
     from {
@@ -51,34 +51,35 @@
 
 :root {
   --radius: 0.25rem;
-  /* Premium Dark Theme */
-  --background: oklch(0.12 0.01 0); /* Very Dark Grey/Black */
-  --foreground: oklch(0.98 0 0); /* Off White */
-  --card: oklch(0.15 0.01 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.15 0.01 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.55 0.25 25); /* Deep Barbershop Red */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.20 0.01 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0.01 0);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.55 0.25 25);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.01 0);
-  --input: oklch(0.20 0.01 0);
+  /* TNU brand: warm charcoal + gold accents (matches tnubarbersalon.com feel) */
+  --background: oklch(0.13 0.005 60);
+  --foreground: oklch(0.97 0.01 80);
+  --card: oklch(0.17 0.008 60);
+  --card-foreground: oklch(0.97 0.01 80);
+  --popover: oklch(0.17 0.008 60);
+  --popover-foreground: oklch(0.97 0.01 80);
+  --primary: oklch(0.78 0.14 80);
+  --primary-foreground: oklch(0.13 0.005 60);
+  --secondary: oklch(0.22 0.01 60);
+  --secondary-foreground: oklch(0.97 0.01 80);
+  --muted: oklch(0.2 0.008 60);
+  --muted-foreground: oklch(0.7 0.015 70);
+  --accent: oklch(0.78 0.14 80);
+  --accent-foreground: oklch(0.13 0.005 60);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.97 0.01 80);
+  --border: oklch(0.27 0.015 70);
+  --input: oklch(0.22 0.01 60);
   --ring: oklch(0.78 0.14 80);
-  --gold: oklch(0.78 0.14 80); /* Luxurious Gold */
-  --gold-foreground: oklch(0.12 0.01 0);
+  --gold: oklch(0.78 0.14 80);
+  --gold-foreground: oklch(0.13 0.005 60);
   --gold-soft: oklch(0.65 0.12 75);
+  --brand-red: oklch(0.48 0.18 25);
 }
 
 .dark {
-  --background: oklch(0.12 0.01 0);
-  --foreground: oklch(0.98 0 0);
+  --background: oklch(0.13 0.005 60);
+  --foreground: oklch(0.97 0.01 80);
 }
 
 @layer base {
@@ -89,19 +90,25 @@
     color-scheme: dark;
     scroll-behavior: smooth;
   }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .fade-in-up {
+      animation: none;
+      opacity: 1;
+    }
+  }
   body {
     background-color: var(--color-background);
-    background-image: 
-      radial-gradient(circle at 50% 0%, oklch(0.2 0.02 0 / 0.5), transparent 70%),
-      linear-gradient(to right, oklch(0.2 0.01 0 / 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.2 0.01 0 / 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -109,11 +116,15 @@
     font-family: var(--font-label);
     letter-spacing: 0.08em;
   }
-  
-  /* Micro animations */
+
   .fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
     opacity: 0;
   }
-}
 
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}

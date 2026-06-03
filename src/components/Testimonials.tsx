@@ -26,6 +26,7 @@ export function Testimonials() {
         {TESTIMONIALS.map((_, n) => (
           <button
             key={n}
+            type="button"
             onClick={() => setI(n)}
             aria-label={`Show testimonial ${n + 1}`}
             className={`h-1.5 w-6 rounded-full transition ${n === i ? "bg-gold" : "bg-border"}`}

@@ -1,11 +1,10 @@
-import collingtonImg from "@/assets/locations/collington.gif.asset.json";
-import mountOakImg from "@/assets/locations/mount-oak.gif.asset.json";
-import upperMarlboroImg from "@/assets/locations/upper-marlboro.webp.asset.json";
-import croftonImg from "@/assets/locations/crofton.webp.asset.json";
+import { IMAGES } from "@/lib/media";
 
 export const PHONE = "(301) 430-5264";
 export const PHONE_TEL = "+13014305264";
 export const EMAIL = "cbtruesdale1@gmail.com";
+export const FACEBOOK_URL = "https://www.facebook.com/TightNUpBarberSalon";
+export const INSTAGRAM_URL = "https://instagram.com/tightnup_barbersalon";
 
 export type Location = {
   slug: string;
@@ -33,7 +32,7 @@ export const LOCATIONS: Location[] = [
     phoneTel: "+13014305264",
     bookerUrl: "https://go.booker.com/location/TIGHTNUPWORKSCRAIN/service-menu",
     geo: { lat: 38.9595, lng: -76.7314 },
-    image: collingtonImg.url,
+    image: IMAGES.locations["collington-plaza"],
   },
   {
     slug: "mount-oak-plaza",
@@ -46,7 +45,7 @@ export const LOCATIONS: Location[] = [
     phoneTel: "+13014305100",
     bookerUrl: "https://go.booker.com/location/TIGHTNUPWORKSLLC/service-menu",
     geo: { lat: 38.9342, lng: -76.7218 },
-    image: mountOakImg.url,
+    image: IMAGES.locations["mount-oak-plaza"],
   },
   {
     slug: "upper-marlboro",
@@ -59,7 +58,7 @@ export const LOCATIONS: Location[] = [
     phoneTel: "+12403391148",
     bookerUrl: "https://go.booker.com/location/TNUUpperMarlboro/service-menu",
     geo: { lat: 38.8156, lng: -76.7497 },
-    image: upperMarlboroImg.url,
+    image: IMAGES.locations["upper-marlboro"],
   },
   {
     slug: "crofton-center",
@@ -72,7 +71,7 @@ export const LOCATIONS: Location[] = [
     phoneTel: "+14432924444",
     bookerUrl: "https://go.booker.com/location/TIGHTNUPWORKSCROFTON/service-menu",
     geo: { lat: 39.0123, lng: -76.6855 },
-    image: croftonImg.url,
+    image: IMAGES.locations["crofton-center"],
   },
 ];
 

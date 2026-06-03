@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaSection } from "@/components/CtaSection";
-import { useBooking } from "@/components/BookingDialog";
+import { BookButton } from "@/components/BookButton";
 import {
   Accordion,
   AccordionContent,
@@ -107,7 +107,6 @@ export const Route = createFileRoute("/services")({
 });
 
 function ServicesPage() {
-  const { open } = useBooking();
   return (
     <>
       <section className="border-b border-border bg-card/30">
@@ -133,12 +132,9 @@ function ServicesPage() {
               <s.icon className="h-6 w-6 text-gold" />
               <h2 className="mt-4 font-display text-xl text-foreground">{s.name}</h2>
               <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.desc}</p>
-              <button
-                onClick={open}
-                className="mt-5 inline-flex items-center justify-center rounded-sm border border-gold px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-gold transition hover:bg-gold hover:text-gold-foreground"
-              >
+              <BookButton className="mt-5 inline-flex w-full items-center justify-center rounded-sm border border-gold px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-gold transition hover:bg-gold hover:text-gold-foreground">
                 Book This Service
-              </button>
+              </BookButton>
             </div>
           ))}
         </div>

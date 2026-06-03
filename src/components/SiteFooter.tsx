@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Phone, Mail } from "lucide-react";
-import { LOCATIONS, PHONE, PHONE_TEL, EMAIL } from "@/lib/site-data";
+import { LOCATIONS, PHONE, PHONE_TEL, EMAIL, FACEBOOK_URL, INSTAGRAM_URL } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
@@ -18,7 +18,7 @@ export function SiteFooter() {
           </p>
           <div className="mt-5 flex items-center gap-3">
             <a
-              href="https://instagram.com/tightnup_barbersalon"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -27,7 +27,7 @@ export function SiteFooter() {
               <Instagram className="h-5 w-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

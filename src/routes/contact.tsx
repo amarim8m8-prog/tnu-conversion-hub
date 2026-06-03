@@ -4,7 +4,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { CtaSection } from "@/components/CtaSection";
-import { LOCATIONS, PHONE, PHONE_TEL, EMAIL } from "@/lib/site-data";
+import { LOCATIONS, PHONE, PHONE_TEL, EMAIL, FACEBOOK_URL, INSTAGRAM_URL } from "@/lib/site-data";
 
 const Schema = z.object({
   name: z.string().trim().min(1, "Name required").max(80),
@@ -179,7 +179,7 @@ function ContactPage() {
           </ul>
           <div className="mt-8 flex items-center gap-3">
             <a
-              href="https://instagram.com/tightnup_barbersalon"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -188,7 +188,7 @@ function ContactPage() {
               <Instagram className="h-5 w-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

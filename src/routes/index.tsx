@@ -3,8 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { TrustBar } from "@/components/TrustBar";
 import { Testimonials } from "@/components/Testimonials";
 import { CtaSection } from "@/components/CtaSection";
-import { useBooking } from "@/components/BookingDialog";
+import { BookButton } from "@/components/BookButton";
 import { LOCATIONS, HOURS_NOTE } from "@/lib/site-data";
+import { GALLERY_ITEMS, IMAGES } from "@/lib/media";
 import {
   Accordion,
   AccordionContent,
@@ -55,8 +56,8 @@ export const Route = createFileRoute("/")({
         content: "Maryland's trusted multicultural barber salon. 4 locations. 20+ years of craftsmanship.",
       },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: "" },
-      { name: "twitter:image", content: "" },
+      { property: "og:image", content: IMAGES.hero },
+      { name: "twitter:image", content: IMAGES.hero },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -66,7 +67,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Tight N Up Barber Salon",
-          image: "",
+          image: IMAGES.hero,
           telephone: "+1-301-430-5264",
           email: "cbtruesdale1@gmail.com",
           priceRange: "$$",
@@ -99,7 +100,7 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  const { open } = useBooking();
+  const galleryPreview = GALLERY_ITEMS.slice(0, 6);
 
   return (
     <>
@@ -107,7 +108,11 @@ function HomePage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="h-full w-full bg-gradient-to-br from-card/50 to-background flex items-center justify-center relative">
-            <img src="/images/hero.png" alt="Tight N Up Barbershop Interior" className="object-cover w-full h-full opacity-60" />
+            <img
+              src={IMAGES.hero}
+              alt="Tight N Up Barber Salon interior — multicultural barbershop in Bowie Maryland"
+              className="h-full w-full object-cover opacity-60"
+            />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
         </div>
@@ -122,12 +127,9 @@ function HomePage() {
             Fresh cuts for men, women, and kids from Bowie to Crofton.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <button
-              onClick={open}
-              className="inline-flex items-center gap-2 rounded-sm bg-gold px-7 py-4 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition-all hover:scale-105 active:scale-95 hover:bg-gold-soft"
-            >
+            <BookButton className="inline-flex items-center gap-2 rounded-sm bg-gold px-7 py-4 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition-all hover:scale-105 active:scale-95 hover:bg-gold-soft">
               Book Your Cut <ArrowRight className="h-4 w-4" />
-            </button>
+            </BookButton>
             <Link
               to="/locations"
               className="inline-flex items-center gap-2 rounded-sm border border-foreground/30 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:scale-105 active:scale-95 hover:border-gold hover:text-gold"
@@ -164,8 +166,15 @@ function HomePage() {
           {LOCATIONS.map((loc) => (
             <div
               key={loc.slug}
-              className="group flex flex-col rounded border border-border bg-card p-6 transition hover:border-gold"
+              className="group flex flex-col overflow-hidden rounded border border-border bg-card transition hover:border-gold"
             >
+              <img
+                src={loc.image}
+                alt={`${loc.name} storefront`}
+                loading="lazy"
+                className="h-36 w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col p-6">
               <MapPin className="h-5 w-5 text-gold" />
               <h3 className="mt-4 font-display text-xl text-foreground">{loc.name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -187,6 +196,7 @@ function HomePage() {
               >
                 Get Fresh Today
               </a>
+              </div>
             </div>
           ))}
         </div>
@@ -231,7 +241,11 @@ function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-square w-full rounded border border-border bg-gradient-to-br from-card/50 to-background flex items-center justify-center relative overflow-hidden">
-                <img src="/images/barber.png" alt="Clinton Truesdale, Founder of TNU Barbershop" className="object-cover w-full h-full" />
+                <img
+                  src={IMAGES.founder}
+                  alt="Clinton Truesdale, founder of Tight N Up Barber Salon"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -left-4 rounded border border-gold bg-background px-5 py-3 font-label text-xs tracking-widest text-gold">
                 EST. 2001 · CLINTON TRUESDALE
@@ -241,8 +255,42 @@ function HomePage() {
         </div>
       </section>
 
+      {/* GALLERY PREVIEW */}
+      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8 fade-in-up">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="font-label text-sm tracking-widest text-gold">PORTFOLIO</p>
+            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
+              Recent cuts &amp; styles
+            </h2>
+          </div>
+          <Link
+            to="/gallery"
+            className="text-sm font-semibold uppercase tracking-wider text-gold hover:underline"
+          >
+            View full gallery →
+          </Link>
+        </div>
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryPreview.map((item) => (
+            <Link
+              key={item.src}
+              to="/gallery"
+              className="group overflow-hidden rounded border border-border"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
-      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8 fade-in-up" style={{ animationDelay: '0.1s' }}>
+      <section className="mx-auto max-w-7xl px-4 py-24 lg:px-8 fade-in-up" style={{ animationDelay: "0.1s" }}>
         <p className="text-center font-label text-sm tracking-widest text-gold">REAL CLIENTS · REAL CUTS</p>
         <h2 className="mt-2 text-center font-display text-4xl text-foreground sm:text-5xl">
           What our family of clients say
@@ -251,12 +299,9 @@ function HomePage() {
           <Testimonials />
         </div>
         <div className="mt-10 text-center">
-          <button
-            onClick={open}
-            className="rounded-sm bg-gold px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-gold-foreground hover:bg-gold-soft"
-          >
+          <BookButton className="rounded-sm bg-gold px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-gold-foreground hover:bg-gold-soft">
             Reserve Your Chair
-          </button>
+          </BookButton>
         </div>
       </section>
 

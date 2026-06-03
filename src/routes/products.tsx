@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaSection } from "@/components/CtaSection";
+import { IMAGES } from "@/lib/media";
 import { Droplets, Sparkles, Leaf, Shield } from "lucide-react";
 
 const PRODUCTS = [
@@ -64,6 +65,15 @@ function ProductsPage() {
             on every texture. Available at all 4 TNU shops.
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 pb-8 lg:px-8">
+        <img
+          src={IMAGES.products}
+          alt="Tight N Up professional hair and skin care product line"
+          loading="lazy"
+          className="w-full rounded border border-border object-cover"
+        />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaSection } from "@/components/CtaSection";
 import { TrustBar } from "@/components/TrustBar";
+import { IMAGES } from "@/lib/media";
 
 import { Award } from "lucide-react";
 
@@ -29,8 +30,8 @@ export const Route = createFileRoute("/about")({
         content: "How Clinton Truesdale built Tight N Up into Maryland's most trusted barber salon.",
       },
       { property: "og:url", content: "/about" },
-      { property: "og:image", content: "" },
-      { name: "twitter:image", content: "" },
+      { property: "og:image", content: IMAGES.founder },
+      { name: "twitter:image", content: IMAGES.founder },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),
@@ -80,9 +81,16 @@ function AboutPage() {
               Small Business of the Year — Bowie Chamber of Commerce
             </div>
           </div>
-          <div>
-            <div className="aspect-square w-full rounded border border-border bg-gradient-to-br from-card/50 to-background flex items-center justify-center">
-              <span className="text-muted-foreground/50 font-label tracking-widest text-sm">BARBER IMAGE (PLACEHOLDER)</span>
+          <div className="relative">
+            <div className="aspect-square w-full overflow-hidden rounded border border-border">
+              <img
+                src={IMAGES.founder}
+                alt="Clinton Truesdale, founder of Tight N Up Barber Salon"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-4 -left-4 rounded border border-gold bg-background px-5 py-3 font-label text-xs tracking-widest text-gold">
+              EST. 2001 · CLINTON TRUESDALE
             </div>
           </div>
         </div>

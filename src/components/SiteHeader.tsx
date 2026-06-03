@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useBooking } from "./BookingDialog";
+import { BookButton } from "./BookButton";
 import { PHONE, PHONE_TEL } from "@/lib/site-data";
 
 const NAV = [
@@ -15,13 +15,13 @@ const NAV = [
 ] as const;
 
 export function SiteHeader() {
-  const { open } = useBooking();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2" aria-label="Tight N Up Barber Salon home">
+        <Link to="/" className="flex items-center gap-3" aria-label="Tight N Up Barber Salon home">
+          <img src="/images/logo.png" alt="" className="h-10 w-10 object-contain" width={40} height={40} />
           <span className="font-display text-2xl font-bold tracking-tight text-foreground">
             Tight <span className="text-gold">N</span> Up
           </span>
@@ -53,12 +53,9 @@ export function SiteHeader() {
             <Phone className="h-4 w-4" />
             <span className="font-label tracking-wider">{PHONE}</span>
           </a>
-          <button
-            onClick={open}
-            className="hidden rounded-sm bg-gold px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition hover:bg-gold-soft md:inline-flex"
-          >
+          <BookButton className="hidden rounded-sm bg-gold px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-gold-foreground transition hover:bg-gold-soft md:inline-flex">
             Book Your Cut
-          </button>
+          </BookButton>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="inline-flex h-10 w-10 items-center justify-center text-foreground lg:hidden"
@@ -91,15 +88,12 @@ export function SiteHeader() {
             >
               <Phone className="h-4 w-4 text-gold" /> {PHONE}
             </a>
-            <button
-              onClick={() => {
-                setMenuOpen(false);
-                open();
-              }}
-              className="mt-2 rounded-sm bg-gold px-5 py-3 text-sm font-semibold uppercase tracking-wider text-gold-foreground"
+            <BookButton
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 w-full rounded-sm bg-gold px-5 py-3 text-sm font-semibold uppercase tracking-wider text-gold-foreground"
             >
               Book Your Cut
-            </button>
+            </BookButton>
           </nav>
         </div>
       )}

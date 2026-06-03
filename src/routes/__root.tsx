@@ -113,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           foundingDate: "2001",
           sameAs: [
             "https://instagram.com/tightnup_barbersalon",
-            "https://facebook.com",
+            "https://www.facebook.com/TightNUpBarberSalon",
           ],
           contactPoint: {
             "@type": "ContactPoint",
