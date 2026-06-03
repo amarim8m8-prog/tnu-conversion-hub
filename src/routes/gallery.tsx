@@ -26,7 +26,7 @@ const ITEMS: Item[] = [
   { src: fb1.url, alt: "Full beard sculpt and clean fade by Tight N Up", cat: "Fades" },
   { src: fb4.url, alt: "360 waves with sharp temple lineup at TNU", cat: "Lineups" },
   { src: fb6.url, alt: "High top afro shaped with a clean fade", cat: "Natural" },
-  { src: tnu14.jpg.url ?? tnu14.url, alt: "Precision clipper fade in progress", cat: "Fades" },
+  { src: tnu14.url, alt: "Precision clipper fade in progress", cat: "Fades" },
   { src: tnu5.url, alt: "Tapered neckline with clipper work", cat: "Fades" },
   { src: tnu18.url, alt: "Kid getting a fresh fade at Tight N Up", cat: "Kids" },
   { src: tnu19.url, alt: "Mature gentleman with a polished side-part finish", cat: "Fades" },
