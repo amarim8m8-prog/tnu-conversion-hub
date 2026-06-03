@@ -120,12 +120,11 @@ function LocationsPage() {
                 </div>
               </div>
               <div className="min-h-72 bg-secondary">
-                <iframe
-                  title={`Map of ${loc.name}`}
-                  src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
+                <img
+                  src={loc.image}
+                  alt={`Tight N Up Barber Salon storefront at ${loc.name}`}
                   loading="lazy"
-                  className="h-full min-h-72 w-full grayscale-[60%]"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full min-h-72 w-full object-cover"
                 />
               </div>
             </article>
